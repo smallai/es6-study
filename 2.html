@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        "use strict";
+
+        let count = 5;
+        if (count > 0) {
+            console.log(`1# count`); //console.log(`1# count = ${count}`); 这样写是错误的
+            let count = 10;          
+            console.log(`2# count = ${count}`); //覆盖全局作用域的count
+        }
+        console.log(`3#count = ${count}`);
+
+        const discount = 1;
+        // discount = 2;   //不能再次赋值
+
+        const person = { name: 'jack', age: 20 };
+        console.log(person);
+
+        person.name = 'jelly';  //可以修改变量的属性
+        console.log(person);
+
+        // person = {};    //出错,不可以改变指向
+        console.log(person);
+
+        const jack = Object.freeze({ name: 'jack' });
+        console.log(jack);
+        // jack.name = 'jack2';    //非严格模式下,不可修改,不报错,严格模式下报错
+        console.log(jack);
+
+    </script>
+</body>
+</html>
