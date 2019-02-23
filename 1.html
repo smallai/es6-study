@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>var声明的变量是函数作用域，可以重复定义</p>
+    <p>let和const声明的是块作用域</p>
+    <script>
+        var price = 100;
+        var price = 200;    //可以重复声明
+
+        if (price > 0) {
+            var discount = price * 2;   //变量会成为全局作用域
+            console.log(`1@discount = ${discount}`);
+        }
+        console.log(`2@discount = ${discount}`);
+
+        let price2 = 100;
+        // let price2 = 200;   //错误,重复声明
+
+        if (price2 > 0) {
+            let discount2 = price * 2;
+            console.log(`1@discount2 = ${discount2}`);
+        }
+        // console.log(`2@discount2 = ${discount2}`);   //错误,变量未定义
+
+    </script>
+</body>
+</html>
