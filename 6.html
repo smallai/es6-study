@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Jelly = {
+            name: 'jelly',
+            habbies: ['coding', 'sleeping', 'eating'],
+            printHabbies: function () {
+                // console.log(this);
+                var self = this;
+                //map的回调函数,严格模式this是undefined,非严格模式指向window
+                this.habbies.map(function(hobby) {
+                    console.log(`${self.name} like ${hobby}`);
+                });
+            },
+            printHabbies2: function() {
+                //箭头函数中的this是父级的this
+                this.habbies.map((hobby) => {
+                    console.log(`${this.name} like ${hobby}`);
+                });
+            }
+        };
+
+        Jelly.printHabbies();
+        Jelly.printHabbies2();
+
+    </script>
+</body>
+</html>
