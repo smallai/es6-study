@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [5, 16, 23, 35, 25, 28];
+        
+        const doubles1 = numbers.map(function (num) {
+            return num * 2;
+        });
+        console.log(doubles1);
+
+        //箭头函数
+        const doubles2 = numbers.map((num) => {
+            return num * 2;
+        });
+        console.log(doubles2);
+
+        //只有一个参数的时候可以省略括号
+        const doubles3 = numbers.map(num => {
+            return num * 2;
+        });
+        console.log(doubles3);
+
+        //多个参数逗号分割
+        const doubles4 = numbers.map((num, idx) => {
+            console.log(`${idx} = ${num}`)
+            return num * 2;
+        });
+        console.log(doubles4);
+
+        //没有参数的时候括号也是需要的
+        const doubles5 = numbers.map(() => {
+            return 'hello';
+        });
+        console.log(doubles5);
+
+        //箭头函数的隐式返回
+        const doubles6 = numbers.map((num) => num * 2 );
+        console.log(doubles6);
+
+        const greet = (name) => { alert(`hello ${name} !`); }
+        greet('jack');
+
+    </script>
+</body>
+</html>
