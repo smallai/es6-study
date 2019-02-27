@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //之前的方法
+        function multiple(a, b)
+        {
+            a = a || 3;
+            b = b || 4;
+            return a * b;
+        }
+
+        console.log(multiple(1, 2));
+        console.log(multiple(1));
+        console.log(multiple());
+
+
+        //es6的函数默认参数
+        function multiple2(a=3, b=4)
+        {
+            return a * b;
+        }
+
+        console.log(multiple2(1, 2));
+        console.log(multiple2(1));
+        console.log(multiple2());
+        console.log(multiple2(undefined, 3));   //第一个参数使用默认值
+    </script>
+</body>
+</html>
