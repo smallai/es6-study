@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //作为构造函数使用时，不能使用箭头函数
+        const Person = function(name, points) {
+            console.log(this);
+            this.name = name;
+            this.points = points;
+        };
+        const jelly = new Person('jelly', 20);
+
+        //不能使用箭头函数，否则绑定的this是window对象
+        Person.prototype.updatePoints = function() {
+            console.log(this);
+            this.points += 1;
+        };
+
+        console.log(jelly);
+
+        //箭头函数内部没有arguments对象
+        const sum = function() {
+            return Array.from(arguments)
+            .reduce((prevSum, value)  => prevSum + value, 0)
+        }
+
+        //也可以使用args
+        const sum2 = (...args) => {
+            return args.reduce((prevSum, value)  => prevSum + value, 0)
+        }
+
+    </script>
+</body>
+</html>
